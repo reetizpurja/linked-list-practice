@@ -83,7 +83,13 @@ public class Exercises {
      * @param head the head of the list
      */
     public static void makePositive(ListNode head) {
-
+        ListNode first = head;
+        while (first != null){
+            if(first.data < 0 ){
+                first.data = -first.data;
+            }
+            first = first.next;
+        }
     }
 
     /**
@@ -103,6 +109,16 @@ public class Exercises {
      * @return whether the list is increasing
      */
     public static boolean isIncreasing(ListNode head) {
-        return false;
+        if(head == null)
+            return true;
+
+        ListNode first = head;
+        while(first.next != null){
+            if(first.data > first.next.data){
+                return false;
+            }
+            first = first.next;
+        }
+        return true;
     }
 }
