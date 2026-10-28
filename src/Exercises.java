@@ -34,7 +34,16 @@ public class Exercises {
      * @return a count of the negative values in the list
      */
     public static int countNegative(ListNode head) {
-        return -1;
+        int count = 0;
+        ListNode first = head;
+        while(first != null){
+            if(first.data < 0){
+                count ++;
+            }
+            first = first.next;
+        }
+        
+        return count;
     }
 
     /**
