@@ -42,7 +42,6 @@ public class Exercises {
             }
             first = first.next;
         }
-        
         return count;
     }
 
@@ -61,7 +60,14 @@ public class Exercises {
      * @param toAdd the value to append in a new node
      */
     public static void addToEnd(ListNode head, int toAdd) {
-
+        if(head == null){
+            return;
+        }
+        ListNode first = head;
+        while(first.next != null){
+            first = first.next;
+        }
+        first.next = new ListNode(toAdd);
     }
 
     /**
